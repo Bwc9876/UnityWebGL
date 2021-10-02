@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool flipped = false;
+    private GaryControls controls;
+
+    void Awake()
     {
-        
+        controls = new GaryControls();
+        controls.Enable();
+        controls.Gary.Flip.performed += ctx => FlipGary();
     }
 
-    // Update is called once per frame
+    void FlipGary()
+    {
+        flipped = !flipped;
+    }
+
     void Update()
     {
-        transform.Rotate(new Vector3(0, 1, 0));
+        transform.Rotate(new Vector3(0, (flipped? -1 : 1), 0));
     }
 }

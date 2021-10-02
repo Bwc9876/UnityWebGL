@@ -1,0 +1,33 @@
+{
+    "name": "GaryControls",
+    "maps": [
+        {
+            "name": "Gary",
+            "id": "24ea6d78-fce7-483f-990d-d6f7d3442758",
+            "actions": [
+                {
+                    "name": "Flip",
+                    "type": "Button",
+                    "id": "4d167a4b-4278-4883-8faa-e4e0a67e5c1f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2c1cba79-1ac9-4f95-86ae-9519301e42bc",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
