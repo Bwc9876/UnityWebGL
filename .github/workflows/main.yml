@@ -3,6 +3,12 @@ name: Compile To Pages
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - ".github/**"
+      - "README.md"
+      - ".gitignore"
+      - ".gitattributes"
+    
 
   workflow_dispatch:
 
