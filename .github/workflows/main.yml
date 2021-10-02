@@ -25,12 +25,13 @@ jobs:
           key: Library-${{ matrix.targetPlatform }}
           restore-keys: Library-
 
-      - name: buuld
+      - name: build
         uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: WebGL
+          unityVersion: 2020.3.12f1
 
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@4.1.5
