@@ -15,6 +15,10 @@ on:
       - "*.md"
       - ".gitignore"
       - ".gitattributes"
+  workflow_dispatch: # Uncomment to allow for manual runnning
+  
+env:
+  DEPLOY_URL: "https://bwc9876.github.io/UnityWebGL/" # Replace with your gihub pages deployment url (will be sent to discord)
 
 jobs:
 
@@ -38,7 +42,7 @@ jobs:
         with:
           targetPlatform: WebGL
           unityVersion: 2020.3.12f1 # Replace with your unity version (find it in ProjectSettings/ProjectVersion.txt)
-          #allowDirtyBuild: true # Uncomment if you want to force the build
+          allowDirtyBuild: true # Uncomment if you want to force the build
 
       - name: Deploy To Pages 🚀 # Deploy the build to GitHub pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
@@ -54,7 +58,7 @@ jobs:
       - name: Send To Discord 🔔
         uses: Ilshidur/action-discord@master
         with:
-          args: 'A new build is being generated for commit ${{ GITHUB_SHA::6 }}'
+          args: 'A New Build Is Being Generated!'
           
   Notify-Success:
     runs-on: ubuntu-latest
@@ -65,5 +69,7 @@ jobs:
       - name: Send To Discord 🔔
         uses: Ilshidur/action-discord@master
         with:
-          args: 'A new build has been successfully made for ${{ GITHUB_SHA::6 }}'
+          args: |
+            'A New Build Has Been Created, Check It Out!'
+            "{{ DEPLOY_URL }}"
       
