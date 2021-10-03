@@ -39,7 +39,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }} # You'll have to set this up on your own (https://game.ci/docs/github/activation)
         with:
           targetPlatform: WebGL
-          unityVersion: 2020.3.12f1 # Replace with your unity version (find it in ProjectSettings/ProjectVersion.txt)
+          unityVersion: 2020.3.19f1 # Replace with your unity version (find it in ProjectSettings/ProjectVersion.txt)
           allowDirtyBuild: true # Uncomment if you want to force the build
 
       - name: Deploy To Pages 🚀 # Deploy the build to GitHub pages
