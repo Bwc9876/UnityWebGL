@@ -29,9 +29,13 @@ jobs:
     steps:
     
       - name: Send To Discord 🔔
-        uses: Ilshidur/action-discord@master
+        uses: appleboy/discord-action@master
         with:
-          args: 'A New Build Is Being Generated!'
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          color: "#848484"
+          username: "Build Notification"
+          message: "A New Build Has Been Started!"
 
   Build:
     runs-on: ubuntu-latest
@@ -64,13 +68,18 @@ jobs:
   Notify-Complete-Build:
     runs-on: ubuntu-latest
     needs: [Notify-Start-Build, Build]
+        
     
     steps:
     
       - name: Send To Discord 🔔
-        uses: Ilshidur/action-discord@master
+        uses: appleboy/discord-action@master
         with:
-          args: |
-            'A New Build Has Been Created, Check It Out!'
-            "{{ DEPLOY_URL }}"
+          webhook_id: ${{ secrets.WEBHOOK_ID }}
+          webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+          color: "#2ed334"
+          username: "Build Notification"
+          message: |
+            "A New Build Has Been Created Successfully!"
+            "${{env.DEPLOY_URL}}"
       
