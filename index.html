@@ -35,7 +35,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Bwc9876",
         productName: "Cool Cube 2021",
-        productVersion: "0.0.52",
+        productVersion: "0.0.55",
       };
 
       var container = document.querySelector("#unity-container");
@@ -65,6 +65,7 @@
         canvas.style.width = "960px";
         canvas.style.height = "600px";
       }
+      canvas.style.background = "url('" + buildUrl + "/WebGL.jpg') center / cover";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
