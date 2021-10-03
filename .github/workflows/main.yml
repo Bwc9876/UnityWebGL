@@ -15,6 +15,7 @@ on:
       - "*.md"
       - ".gitignore"
       - ".gitattributes"
+      - ".env"
   workflow_dispatch: # Uncomment to allow for manual runnning
 
 jobs:
