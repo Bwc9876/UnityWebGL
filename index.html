@@ -12,7 +12,7 @@
 	<div class="info">
 		<p><b>Bwc9876.Cool Cube 2021</b></p>
 		<p>Unity Version: 2020.3.19f1</p>
-		<p>Version: 0.0.65</p>
+		<p>Version: 0.0.70</p>
 		<a rel="noopener" target="_blank" href="https://github.com/Bwc9876/UnityWebGL">View On GitHub</a>
 	</div>
     <div id="unity-container" class="unity-desktop">
@@ -27,7 +27,14 @@
         <div class="spinner"></div>
       </div>
     </div>
-    <div id="unity-fullscreen-button" style="display: none;"></div>
+    <button id="unity-fullscreen-button">
+		<svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
+			<path d="m 10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z"></path>
+			<path d="m 20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z"></path>
+			<path d="m 24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z"></path>
+			<path d="M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z"></path>
+		</svg>
+	</button>
     <script>
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/WebGL.loader.js";
@@ -38,7 +45,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Bwc9876",
         productName: "Cool Cube 2021",
-        productVersion: "0.0.65",
+        productVersion: "0.0.70",
       };
 
       const container = document.querySelector("#unity-container");
