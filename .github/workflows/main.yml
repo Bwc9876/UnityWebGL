@@ -24,7 +24,8 @@ jobs:
     runs-on: [self-hosted, linux]
 
     steps:
-      - uses: actions/checkout@v2 # Grab our repo
+      - name: Checkout ⬇️ # Grab our repo
+        uses: actions/checkout@v2 
       
       - name: Cache Library 📝 # We cache the library folder so that way it takes less time to run in subsequent builds
         uses: actions/cache@v2
